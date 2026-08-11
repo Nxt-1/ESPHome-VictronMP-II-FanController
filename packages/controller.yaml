@@ -225,14 +225,14 @@ interval:
       - lambda: |-
           float command = 100.0f;
 
-          if (id(fan_mode).state == "Manual") {
+          if (id(fan_mode).current_option() == "Manual") {
             if (!isnan(id(fan_speed).state)) {
               command = id(fan_speed).state;
             }
-          } else if (id(fan_mode).state == "Full Speed") {
+          } else if (id(fan_mode).current_option() == "Full Speed") {
             command = 100.0f;
           } else {
-            // Auto: fail to full speed until every request input is valid.
+            // Auto mode. Until all three request inputs are valid, fail to 100%.
             if (!isnan(id(mp1_request).state) &&
                 !isnan(id(mp2_request).state) &&
                 !isnan(id(mp3_request).state) &&
@@ -241,16 +241,15 @@ interval:
               command = std::max(id(mp1_request).state,
                         std::max(id(mp2_request).state,
                                  id(mp3_request).state));
+
               command = std::max(command, id(minimum_fan_speed).state);
             }
           }
 
           command = std::max(20.0f, std::min(100.0f, command));
 
-          // BC547 inversion.
           id(fan_pwm_raw).set_level(1.0f - command / 100.0f);
 
-          // Keep HA slider equal to the command actually being sent.
           if (isnan(id(fan_speed).state) ||
               fabsf(id(fan_speed).state - command) >= 0.5f) {
             id(fan_speed).publish_state(command);
