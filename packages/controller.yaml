@@ -1,0 +1,290 @@
+esphome:
+  name: ${name}
+  friendly_name: ${friendly_name}
+  comment: "3 MultiPlus-II fan requests -> one shared Noctua fan command"
+  on_boot:
+    priority: 600
+    then:
+      # Raw 0% = GPIO LOW = BC547s OFF = PWM lines released = full fans.
+      - output.set_level:
+          id: fan_pwm_raw
+          level: 0%
+
+esp32:
+  board: seeed_xiao_esp32c3
+  framework:
+    type: esp-idf
+
+logger:
+  level: ${log_level}
+
+api:
+  encryption:
+    key: !secret api_encryption_key
+  reboot_timeout: 0s
+
+ota:
+  - platform: esphome
+    password: !secret ota_password
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  reboot_timeout: 0s
+  power_save_mode: none
+
+# Shared 25 kHz PWM.
+# GPIO6 / D4 drives three 4.7k base resistors, one per BC547B.
+# The transistor stages invert the logic:
+#   GPIO LOW  -> BC547 OFF -> fan PWM released HIGH -> 100% fan
+#   GPIO HIGH -> BC547 ON  -> fan PWM LOW           -> 0% fan
+output:
+  - platform: ledc
+    id: fan_pwm_raw
+    pin: GPIO6
+    frequency: 25kHz
+    channel: 0
+
+sensor:
+  # Three isolated ~25 Hz Victron power-PWM request inputs.
+  - platform: duty_cycle
+    id: mp1_request
+    name: "MP1 Victron Fan Request"
+    pin:
+      number: GPIO3
+      mode:
+        input: true
+      inverted: true
+    update_interval: 500ms
+    unit_of_measurement: "%"
+    accuracy_decimals: 0
+    state_class: measurement
+    filters:
+      - clamp:
+          min_value: 0
+          max_value: 100
+
+  - platform: duty_cycle
+    id: mp2_request
+    name: "MP2 Victron Fan Request"
+    pin:
+      number: GPIO4
+      mode:
+        input: true
+      inverted: true
+    update_interval: 500ms
+    unit_of_measurement: "%"
+    accuracy_decimals: 0
+    state_class: measurement
+    filters:
+      - clamp:
+          min_value: 0
+          max_value: 100
+
+  - platform: duty_cycle
+    id: mp3_request
+    name: "MP3 Victron Fan Request"
+    pin:
+      number: GPIO5
+      mode:
+        input: true
+      inverted: true
+    update_interval: 500ms
+    unit_of_measurement: "%"
+    accuracy_decimals: 0
+    state_class: measurement
+    filters:
+      - clamp:
+          min_value: 0
+          max_value: 100
+
+  - platform: template
+    id: highest_request
+    name: "Highest Victron Fan Request"
+    unit_of_measurement: "%"
+    accuracy_decimals: 0
+    state_class: measurement
+    update_interval: 500ms
+    lambda: |-
+      if (isnan(id(mp1_request).state) ||
+          isnan(id(mp2_request).state) ||
+          isnan(id(mp3_request).state)) {
+        return NAN;
+      }
+      return std::max(id(mp1_request).state,
+             std::max(id(mp2_request).state, id(mp3_request).state));
+
+  # Noctua tach: open collector, two pulses/revolution.
+  # External 1k pull-up to 3.3 V on each tach line.
+  - platform: pulse_meter
+    id: mp1_rpm
+    name: "MP1 Fan RPM"
+    pin:
+      number: GPIO7
+      mode:
+        input: true
+    internal_filter: 100us
+    timeout: 2s
+    unit_of_measurement: "rpm"
+    accuracy_decimals: 0
+    state_class: measurement
+    filters:
+      - multiply: 0.5
+      - throttle_average: 1s
+
+  - platform: pulse_meter
+    id: mp2_rpm
+    name: "MP2 Fan RPM"
+    pin:
+      number: GPIO20
+      mode:
+        input: true
+    internal_filter: 100us
+    timeout: 2s
+    unit_of_measurement: "rpm"
+    accuracy_decimals: 0
+    state_class: measurement
+    filters:
+      - multiply: 0.5
+      - throttle_average: 1s
+
+  - platform: pulse_meter
+    id: mp3_rpm
+    name: "MP3 Fan RPM"
+    pin:
+      number: GPIO10
+      mode:
+        input: true
+    internal_filter: 100us
+    timeout: 2s
+    unit_of_measurement: "rpm"
+    accuracy_decimals: 0
+    state_class: measurement
+    filters:
+      - multiply: 0.5
+      - throttle_average: 1s
+
+  - platform: wifi_signal
+    name: "WiFi Signal"
+    update_interval: 60s
+    entity_category: diagnostic
+
+  - platform: uptime
+    name: "Uptime"
+    entity_category: diagnostic
+
+number:
+  - platform: template
+    id: minimum_fan_speed
+    name: "Minimum Fan Speed"
+    min_value: 20
+    max_value: 60
+    step: 1
+    unit_of_measurement: "%"
+    optimistic: true
+    restore_value: true
+    initial_value: 30
+    entity_category: config
+
+  # Live shared command + manual control slider.
+  # A user change automatically selects Manual mode.
+  - platform: template
+    id: fan_speed
+    name: "Fan Speed"
+    min_value: 20
+    max_value: 100
+    step: 1
+    unit_of_measurement: "%"
+    optimistic: true
+    restore_value: false
+    initial_value: 100
+    set_action:
+      - select.set:
+          id: fan_mode
+          option: "Manual"
+      - lambda: |-
+          const float command = std::max(20.0f, std::min(100.0f, x));
+          id(fan_pwm_raw).set_level(1.0f - command / 100.0f);
+
+select:
+  - platform: template
+    id: fan_mode
+    name: "Fan Mode"
+    options:
+      - "Auto"
+      - "Manual"
+      - "Full Speed"
+    optimistic: true
+    restore_value: false
+    initial_option: "Auto"
+
+# Local control loop. HA/Wi-Fi are not required for cooling.
+interval:
+  - interval: 250ms
+    then:
+      - lambda: |-
+          float command = 100.0f;
+
+          if (id(fan_mode).state == "Manual") {
+            if (!isnan(id(fan_speed).state)) {
+              command = id(fan_speed).state;
+            }
+          } else if (id(fan_mode).state == "Full Speed") {
+            command = 100.0f;
+          } else {
+            // Auto: fail to full speed until every request input is valid.
+            if (!isnan(id(mp1_request).state) &&
+                !isnan(id(mp2_request).state) &&
+                !isnan(id(mp3_request).state) &&
+                !isnan(id(minimum_fan_speed).state)) {
+
+              command = std::max(id(mp1_request).state,
+                        std::max(id(mp2_request).state,
+                                 id(mp3_request).state));
+              command = std::max(command, id(minimum_fan_speed).state);
+            }
+          }
+
+          command = std::max(20.0f, std::min(100.0f, command));
+
+          // BC547 inversion.
+          id(fan_pwm_raw).set_level(1.0f - command / 100.0f);
+
+          // Keep HA slider equal to the command actually being sent.
+          if (isnan(id(fan_speed).state) ||
+              fabsf(id(fan_speed).state - command) >= 0.5f) {
+            id(fan_speed).publish_state(command);
+          }
+
+binary_sensor:
+  # 20% PWM is nominally ~700 rpm on this Noctua model.
+  # 250 rpm is intentionally a stall/failure threshold, not a performance limit.
+  - platform: template
+    name: "MP1 Fan Fault"
+    device_class: problem
+    lambda: |-
+      if (isnan(id(fan_speed).state) || isnan(id(mp1_rpm).state)) return false;
+      return id(fan_speed).state >= 20.0f && id(mp1_rpm).state < 250.0f;
+    filters:
+      - delayed_on: 5s
+      - delayed_off: 2s
+
+  - platform: template
+    name: "MP2 Fan Fault"
+    device_class: problem
+    lambda: |-
+      if (isnan(id(fan_speed).state) || isnan(id(mp2_rpm).state)) return false;
+      return id(fan_speed).state >= 20.0f && id(mp2_rpm).state < 250.0f;
+    filters:
+      - delayed_on: 5s
+      - delayed_off: 2s
+
+  - platform: template
+    name: "MP3 Fan Fault"
+    device_class: problem
+    lambda: |-
+      if (isnan(id(fan_speed).state) || isnan(id(mp3_rpm).state)) return false;
+      return id(fan_speed).state >= 20.0f && id(mp3_rpm).state < 250.0f;
+    filters:
+      - delayed_on: 5s
+      - delayed_off: 2s

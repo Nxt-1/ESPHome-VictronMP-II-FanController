@@ -1,0 +1,15 @@
+substitutions:
+  name: victron-fan-controller
+  friendly_name: Victron Fan Controller
+  log_level: INFO
+
+packages:
+  remote_package:
+    url: https://github.com/Nxt-1/ESPHome-Victron-Fan-Controller
+    ref: main
+    files:
+      - packages/controller.yaml
+    refresh: 1s
+
+wifi:
+  use_address: 192.168.178.163

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1100" viewBox="0 0 1800 1100">
+<style>
+.title{font:700 28px Arial;fill:#111}.h{font:700 20px Arial;fill:#111}.t{font:18px Arial;fill:#111}.s{font:15px Arial;fill:#333}
+.box{fill:#fff;stroke:#222;stroke-width:2;rx:10}.iso{fill:#f2f6ff;stroke:#3564c4;stroke-width:2;rx:10}
+.mcu{fill:#f7f7f7;stroke:#222;stroke-width:3;rx:15}.fan{fill:#f1fff1;stroke:#397a3d;stroke-width:2;rx:10}
+.w{fill:none;stroke:#222;stroke-width:3}.sig{fill:none;stroke:#3564c4;stroke-width:3}.pwm{fill:none;stroke:#b02a2a;stroke-width:3}
+.pwr{fill:none;stroke:#a35a00;stroke-width:4}
+</style>
+<text x="45" y="48" class="title">MultiPlus-II 3-input / shared 3-fan controller</text>
+<text x="45" y="78" class="t">XIAO ESP32-C3 • 3× PC817 request inputs • 1× 25 kHz command • 3× BC547 outputs • 3× tach inputs</text>
+
+<text x="50" y="125" class="h">Victron request inputs</text>
+<g transform="translate(50,145)">
+  <rect width="220" height="135" class="box"/><text x="20" y="38" class="h">MP1 fan output</text><text x="20" y="78" class="t">FAN+</text><text x="20" y="115" class="t">FAN−</text>
+  <rect x="260" y="35" width="110" height="36" class="box"/><text x="275" y="59" class="s">4.7k / 0.5W</text>
+  <rect x="415" y="10" width="175" height="115" class="iso"/><text x="475" y="45" class="h">PC817</text><text x="440" y="80" class="s">isolated</text>
+  <path d="M220 78 L260 53 M370 53 L415 53 M415 100 L235 100 L220 115" class="w"/>
+  <path d="M590 53 L690 53" class="sig"/><text x="700" y="60" class="t">GPIO3</text>
+  <text x="600" y="100" class="s">10k pull-up → 3.3V</text>
+</g>
+<g transform="translate(50,315)">
+  <rect width="220" height="135" class="box"/><text x="20" y="38" class="h">MP2 fan output</text><text x="20" y="78" class="t">FAN+</text><text x="20" y="115" class="t">FAN−</text>
+  <rect x="260" y="35" width="110" height="36" class="box"/><text x="275" y="59" class="s">4.7k / 0.5W</text>
+  <rect x="415" y="10" width="175" height="115" class="iso"/><text x="475" y="45" class="h">PC817</text><text x="440" y="80" class="s">isolated</text>
+  <path d="M220 78 L260 53 M370 53 L415 53 M415 100 L235 100 L220 115" class="w"/>
+  <path d="M590 53 L690 53" class="sig"/><text x="700" y="60" class="t">GPIO4</text>
+  <text x="600" y="100" class="s">10k pull-up → 3.3V</text>
+</g>
+<g transform="translate(50,485)">
+  <rect width="220" height="135" class="box"/><text x="20" y="38" class="h">MP3 fan output</text><text x="20" y="78" class="t">FAN+</text><text x="20" y="115" class="t">FAN−</text>
+  <rect x="260" y="35" width="110" height="36" class="box"/><text x="275" y="59" class="s">4.7k / 0.5W</text>
+  <rect x="415" y="10" width="175" height="115" class="iso"/><text x="475" y="45" class="h">PC817</text><text x="440" y="80" class="s">isolated</text>
+  <path d="M220 78 L260 53 M370 53 L415 53 M415 100 L235 100 L220 115" class="w"/>
+  <path d="M590 53 L690 53" class="sig"/><text x="700" y="60" class="t">GPIO5</text>
+  <text x="600" y="100" class="s">10k pull-up → 3.3V</text>
+</g>
+<text x="50" y="655" class="s">Add 1N4148 antiparallel across each PC817 LED. Do not connect Victron FAN− to controller GND.</text>
+
+<rect x="840" y="145" width="360" height="480" class="mcu"/>
+<text x="925" y="190" class="title">XIAO ESP32-C3</text>
+<text x="880" y="245" class="t">GPIO3 ← MP1 request</text>
+<text x="880" y="280" class="t">GPIO4 ← MP2 request</text>
+<text x="880" y="315" class="t">GPIO5 ← MP3 request</text>
+<text x="880" y="370" class="t">max(requests) + minimum</text>
+<text x="880" y="425" class="t">GPIO21 → LEDC 25 kHz</text>
+<text x="880" y="480" class="t">GPIO6 ← Fan 1 tach</text>
+<text x="880" y="515" class="t">GPIO7 ← Fan 2 tach</text>
+<text x="880" y="550" class="t">GPIO20 ← Fan 3 tach</text>
+<text x="880" y="595" class="s">GPIO2/8/9 unused</text>
+
+<text x="1260" y="125" class="h">Shared PWM, separate fan drivers</text>
+<path d="M1200 425 L1280 425" class="pwm"/>
+<g transform="translate(1280,160)">
+ <path d="M0 265 L0 55 L70 55" class="pwm"/><rect x="70" y="37" width="80" height="36" class="box"/><text x="90" y="61" class="s">4.7k</text>
+ <rect x="190" y="10" width="120" height="95" class="box"/><text x="215" y="47" class="h">BC547B</text><text x="215" y="77" class="s">10k B-E</text>
+ <path d="M150 55 L190 55 M310 55 L360 55" class="pwm"/>
+ <rect x="360" y="-20" width="140" height="150" class="fan"/><text x="405" y="18" class="h">Fan 1</text><text x="380" y="53" class="s">blue PWM</text><text x="380" y="78" class="s">green tach</text><text x="380" y="103" class="s">+24V / GND</text>
+</g>
+<g transform="translate(1280,370)">
+ <path d="M0 55 L70 55" class="pwm"/><rect x="70" y="37" width="80" height="36" class="box"/><text x="90" y="61" class="s">4.7k</text>
+ <rect x="190" y="10" width="120" height="95" class="box"/><text x="215" y="47" class="h">BC547B</text><text x="215" y="77" class="s">10k B-E</text>
+ <path d="M150 55 L190 55 M310 55 L360 55" class="pwm"/>
+ <rect x="360" y="-20" width="140" height="150" class="fan"/><text x="405" y="18" class="h">Fan 2</text><text x="380" y="53" class="s">blue PWM</text><text x="380" y="78" class="s">green tach</text><text x="380" y="103" class="s">+24V / GND</text>
+</g>
+<g transform="translate(1280,580)">
+ <path d="M0 -155 L0 55 L70 55" class="pwm"/><rect x="70" y="37" width="80" height="36" class="box"/><text x="90" y="61" class="s">4.7k</text>
+ <rect x="190" y="10" width="120" height="95" class="box"/><text x="215" y="47" class="h">BC547B</text><text x="215" y="77" class="s">10k B-E</text>
+ <path d="M150 55 L190 55 M310 55 L360 55" class="pwm"/>
+ <rect x="360" y="-20" width="140" height="150" class="fan"/><text x="405" y="18" class="h">Fan 3</text><text x="380" y="53" class="s">blue PWM</text><text x="380" y="78" class="s">green tach</text><text x="380" y="103" class="s">+24V / GND</text>
+</g>
+
+<rect x="50" y="735" width="700" height="220" class="box"/>
+<text x="80" y="775" class="h">Tach input — repeat 3×</text>
+<text x="80" y="820" class="t">3.3V ── 1k ── tach node ── fan green</text>
+<text x="80" y="860" class="t">                 ├── GPIO6 / GPIO7 / GPIO20</text>
+<text x="80" y="900" class="t">                 └── 1 µF optional ── GND</text>
+<text x="80" y="935" class="s">Two pulses/revolution; open-collector tach.</text>
+
+<rect x="810" y="735" width="940" height="220" class="box"/>
+<text x="840" y="775" class="h">Power</text>
+<text x="840" y="820" class="t">inverter-backed AC → 24V Mean Well → all fan yellow wires</text>
+<text x="840" y="860" class="t">inverter-backed AC → 5V Mean Well → Schottky → XIAO 5V</text>
+<text x="840" y="900" class="t">24V GND = 5V GND = XIAO GND = all fan black wires</text>
+<text x="840" y="935" class="s">Controller loss with 24V alive → BC547s OFF → fans default full speed.</text>
+
+<text x="50" y="1025" class="s">GPIO21 is UART TX during early boot; brief startup PWM irregularity is accepted and normal 25 kHz LEDC control resumes after boot.</text>
+</svg>
