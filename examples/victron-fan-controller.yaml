@@ -5,7 +5,7 @@ substitutions:
 
 packages:
   remote_package:
-    url: https://github.com/Nxt-1/ESPHome-Victron-Fan-Controller
+    url: https://github.com/Nxt-1/ESPHome-VictronMP-II-FanController
     ref: main
     files:
       - packages/controller.yaml
