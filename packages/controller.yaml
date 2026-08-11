@@ -26,6 +26,19 @@ api:
 ota:
   - platform: esphome
     password: !secret ota_password
+    on_begin:
+      then:
+        - logger.log: "OTA update started"
+
+    on_end:
+      then:
+        - logger.log: "OTA update completed"
+
+    on_error:
+      then:
+        - logger.log:
+            format: "OTA update failed with error code %d"
+            args: ["x"]
 
 wifi:
   ssid: !secret wifi_ssid
