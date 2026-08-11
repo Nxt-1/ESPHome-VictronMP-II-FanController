@@ -11,7 +11,8 @@ esphome:
           level: 0%
 
 esp32:
-  board: seeed_xiao_esp32c3
+  board: seeed_xiao_esp32c6
+  variant: esp32c6
   framework:
     type: esp-idf
 
@@ -47,14 +48,14 @@ wifi:
   power_save_mode: none
 
 # Shared 25 kHz PWM.
-# GPIO6 / D4 drives three 4.7k base resistors, one per BC547B.
+# GPIO22 / D4 drives three 4.7k base resistors, one per BC547B.
 # The transistor stages invert the logic:
 #   GPIO LOW  -> BC547 OFF -> fan PWM released HIGH -> 100% fan
 #   GPIO HIGH -> BC547 ON  -> fan PWM LOW           -> 0% fan
 output:
   - platform: ledc
     id: fan_pwm_raw
-    pin: GPIO6
+    pin: GPIO22
     frequency: 25kHz
     channel: 0
 
@@ -64,7 +65,7 @@ sensor:
     id: mp1_request
     name: "MP1 Victron Fan Request"
     pin:
-      number: GPIO3
+      number: GPIO1
       mode:
         input: true
       inverted: true
@@ -81,7 +82,7 @@ sensor:
     id: mp2_request
     name: "MP2 Victron Fan Request"
     pin:
-      number: GPIO4
+      number: GPIO2
       mode:
         input: true
       inverted: true
@@ -98,7 +99,7 @@ sensor:
     id: mp3_request
     name: "MP3 Victron Fan Request"
     pin:
-      number: GPIO5
+      number: GPIO21
       mode:
         input: true
       inverted: true
@@ -133,7 +134,7 @@ sensor:
     id: mp1_rpm
     name: "MP1 Fan RPM"
     pin:
-      number: GPIO7
+      number: GPIO23
       mode:
         input: true
     internal_filter: 100us
@@ -149,7 +150,7 @@ sensor:
     id: mp2_rpm
     name: "MP2 Fan RPM"
     pin:
-      number: GPIO20
+      number: GPIO17
       mode:
         input: true
     internal_filter: 100us
@@ -165,7 +166,7 @@ sensor:
     id: mp3_rpm
     name: "MP3 Fan RPM"
     pin:
-      number: GPIO10
+      number: GPIO18
       mode:
         input: true
     internal_filter: 100us
