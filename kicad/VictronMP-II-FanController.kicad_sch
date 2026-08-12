@@ -1116,22 +1116,16 @@
 		)
 	)
 	(junction
-		(at 228.6 166.37)
+		(at 212.09 166.37)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "0905a60f-146c-4a7d-a83a-642c8361d927")
+		(uuid "0847cd71-4802-4546-b9aa-ddc5297b796c")
 	)
 	(junction
 		(at 157.48 116.37)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0d466b30-5910-4acc-b48a-5544fb79bfb6")
-	)
-	(junction
-		(at 228.6 116.37)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "32a25164-9cb5-42a6-bb2e-5d7be5cb7cb7")
 	)
 	(junction
 		(at 212.09 94.69)
@@ -1156,12 +1150,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7b977399-3c02-4ae6-b773-ea0703507be8")
-	)
-	(junction
-		(at 228.6 66.37)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "809d302f-1efc-45ed-b2f0-82ee6b7fe2dd")
 	)
 	(junction
 		(at 157.48 166.37)
@@ -1293,6 +1281,16 @@
 	)
 	(wire
 		(pts
+			(xy 212.09 166.37) (xy 215.9 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e236c9f-15b5-4e57-98f9-8fc23b530e31")
+	)
+	(wire
+		(pts
 			(xy 157.48 166.37) (xy 151.13 166.37)
 		)
 		(stroke
@@ -1303,16 +1301,6 @@
 	)
 	(wire
 		(pts
-			(xy 212.09 66.37) (xy 212.09 166.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "20b84abd-dcea-42d8-b9c2-6d5fa0d9f6cd")
-	)
-	(wire
-		(pts
 			(xy 248.92 68.91) (xy 245.11 68.91)
 		)
 		(stroke
@@ -1320,16 +1308,6 @@
 			(type default)
 		)
 		(uuid "240bf88b-a9dc-4727-8d8b-55af23afe3d7")
-	)
-	(wire
-		(pts
-			(xy 226.06 166.37) (xy 228.6 166.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "24a9d713-84f5-483e-bbae-5e4fe042660b")
 	)
 	(wire
 		(pts
@@ -1353,23 +1331,13 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 72.72) (xy 228.6 66.37)
+			(xy 226.06 166.37) (xy 234.95 166.37)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2946e0c7-31db-4b98-b27a-287ef192ae6a")
-	)
-	(wire
-		(pts
-			(xy 228.6 122.72) (xy 228.6 116.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "34ef169d-2668-4115-b726-8c4ecd7d5211")
+		(uuid "369fb839-07df-4b3b-8b75-beae4b9764c3")
 	)
 	(wire
 		(pts
@@ -1380,16 +1348,6 @@
 			(type default)
 		)
 		(uuid "37ec5c94-b5c8-433d-83a4-86e1c14222bf")
-	)
-	(wire
-		(pts
-			(xy 228.6 166.37) (xy 234.95 166.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3897c1ca-1550-493e-8e96-72276716a60f")
 	)
 	(wire
 		(pts
@@ -1513,16 +1471,6 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 137.96) (xy 228.6 132.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "54b3154c-9fd8-481a-b383-f9aa9cae102f")
-	)
-	(wire
-		(pts
 			(xy 246.42 59.69) (xy 205.74 59.69)
 		)
 		(stroke
@@ -1563,7 +1511,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 187.96) (xy 228.6 182.88)
+			(xy 212.09 187.96) (xy 212.09 182.88)
 		)
 		(stroke
 			(width 0)
@@ -1603,16 +1551,6 @@
 	)
 	(wire
 		(pts
-			(xy 226.06 66.37) (xy 228.6 66.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6451e722-d3c6-4123-bdba-5c62238fd98a")
-	)
-	(wire
-		(pts
 			(xy 280.67 57.48) (xy 288.29 57.48)
 		)
 		(stroke
@@ -1643,13 +1581,13 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 87.96) (xy 228.6 82.88)
+			(xy 212.09 166.37) (xy 212.09 172.72)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7d8351fd-86ef-43b3-8395-2340cf75a8ba")
+		(uuid "7c3206b2-0bb5-408a-8ee4-9aad6e31a7c8")
 	)
 	(wire
 		(pts
@@ -1763,16 +1701,6 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 116.37) (xy 234.95 116.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b1cf59b6-725d-41d0-962f-0dcfd277cbce")
-	)
-	(wire
-		(pts
 			(xy 288.29 104.94) (xy 280.67 104.94)
 		)
 		(stroke
@@ -1780,16 +1708,6 @@
 			(type default)
 		)
 		(uuid "b58fec64-d5c1-4a75-8c2e-c77a4bcf37a8")
-	)
-	(wire
-		(pts
-			(xy 212.09 166.37) (xy 215.9 166.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b6ea1a0c-4af5-435c-9c09-6227a6e4584e")
 	)
 	(wire
 		(pts
@@ -1823,7 +1741,7 @@
 	)
 	(wire
 		(pts
-			(xy 226.06 116.37) (xy 228.6 116.37)
+			(xy 226.06 116.37) (xy 234.95 116.37)
 		)
 		(stroke
 			(width 0)
@@ -1903,7 +1821,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 66.37) (xy 234.95 66.37)
+			(xy 226.06 66.37) (xy 234.95 66.37)
 		)
 		(stroke
 			(width 0)
@@ -1973,7 +1891,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 172.72) (xy 228.6 166.37)
+			(xy 212.09 66.37) (xy 212.09 166.37)
 		)
 		(stroke
 			(width 0)
@@ -2145,31 +2063,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 228.6 87.96 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "3c10131a-1ddb-4150-b021-8391cbe0d17b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 228.6 94.8157 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "GND"
-		(shape input)
-		(at 228.6 187.96 270)
+		(at 212.09 187.96 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2178,7 +2072,7 @@
 		)
 		(uuid "3d3a4e64-afc5-41d3-bd1c-6d1e8eed9863")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 228.6 185.42 0)
+			(at 212.09 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2504,30 +2398,6 @@
 				(font
 					(size 1.27 1.27)
 				)
-			)
-		)
-	)
-	(global_label "GND"
-		(shape input)
-		(at 228.6 137.96 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "fc345ee5-2466-49a9-be4a-24b766b00194")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 228.6 144.8157 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 			)
 		)
 	)
@@ -3188,7 +3058,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7k 0.5W"
+		(property "Value" "4.7k"
 			(at 130.838 118.91 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3240,84 +3110,6 @@
 			(project "VictronMP-II-FanController"
 				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
 					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "FanCtrl:R")
-		(at 228.6 127.8 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "466c466a-0635-47d8-8ae3-8f8af3d0511a")
-		(property "Reference" "R10"
-			(at 231.902 127.8 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 225.298 127.8 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
-			(at 228.6 127.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 228.6 127.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 228.6 127.8 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9e971de1-fd47-4fe0-b7bb-de12f64af259")
-		)
-		(pin "2"
-			(uuid "9ee07928-731a-4e5d-97e6-16a9a5de20e9")
-		)
-		(instances
-			(project "VictronMP-II-FanController"
-				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
-					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -3749,7 +3541,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7k 0.5W"
+		(property "Value" "4.7k"
 			(at 130.838 68.91 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4206,84 +3998,6 @@
 		)
 	)
 	(symbol
-		(lib_id "FanCtrl:R")
-		(at 228.6 77.8 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c63a745b-07ad-4096-a37c-178d55ec6bed")
-		(property "Reference" "R8"
-			(at 231.902 77.8 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 225.298 77.8 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
-			(at 228.6 77.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 228.6 77.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 228.6 77.8 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "56be649c-1c54-4865-b310-9777c2049a21")
-		)
-		(pin "2"
-			(uuid "64d12016-563f-4657-812d-0123a10cd9f2")
-		)
-		(instances
-			(project "VictronMP-II-FanController"
-				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
-					(reference "R8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "FanCtrl:Fan4")
 		(at 293.37 58.75 0)
 		(unit 1)
@@ -4450,7 +4164,7 @@
 	)
 	(symbol
 		(lib_id "FanCtrl:R")
-		(at 228.6 177.8 90)
+		(at 212.09 177.8 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4460,7 +4174,7 @@
 		(dnp no)
 		(uuid "d2a1b4c6-5f0f-4fe9-8ca7-d27dd6be184f")
 		(property "Reference" "R12"
-			(at 231.902 177.8 90)
+			(at 215.392 177.8 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4470,7 +4184,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 225.298 177.8 90)
+			(at 208.788 177.8 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4480,7 +4194,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
-			(at 228.6 177.8 0)
+			(at 212.09 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4491,7 +4205,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 228.6 177.8 0)
+			(at 212.09 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4502,7 +4216,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 228.6 177.8 0)
+			(at 212.09 177.8 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4727,7 +4441,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7k 0.5W"
+		(property "Value" "4.7k"
 			(at 130.838 168.91 0)
 			(show_name no)
 			(do_not_autoplace no)
