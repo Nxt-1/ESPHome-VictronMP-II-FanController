@@ -10,10 +10,6 @@ one shared speed command to all three fans.
 All three fans therefore run at the same commanded speed. Each fan keeps its
 own tachometer channel so failures can still be detected independently.
 
-## Hardware overview
-
-![Schematic](schematic.svg)
-
 ## Home Assistant entities
 
 **Requests**

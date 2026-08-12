@@ -1,0 +1,4793 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "a36cde68-c8da-4183-a9c7-8e15076d39f6")
+	(paper "A3")
+	(title_block
+		(title "Victron MultiPlus-II 3-input / shared 3-fan controller")
+		(date "2026-08-12")
+		(rev "0.3")
+		(company "Nxt-1")
+		(comment 1 "Seeed Studio XIAO ESP32-C6")
+	)
+	(lib_symbols
+		(symbol "FanCtrl:BC547"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BC547B"
+				(at 0 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "BC547_0_1"
+				(polyline
+					(pts
+						(xy -1.016 0.762) (xy 1.27 2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 -0.762) (xy 1.27 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 -1.778) (xy -1.016 1.778)
+					)
+					(stroke
+						(width 0.381)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 3.048)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.381 -1.905) (xy 1.27 -2.286) (xy 0.889 -1.397)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "BC547_1_1"
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 0 0)
+					(length 4.064)
+					(name "B"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 2.54)
+					(name "E"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "FanCtrl:Conn2"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn2_0_1"
+				(rectangle
+					(start -3.81 -5.08)
+					(end 2.54 5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Conn2_1_1"
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "FanCtrl:Fan4"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 3.81 -8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Noctua 4-pin PWM"
+				(at 3.81 8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Description" "4-pin PWM fan: 1=GND, 2=+24V, 3=TACH, 4=PWM"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Fan4_0_1"
+				(rectangle
+					(start -2.54 -6.35)
+					(end 10.16 6.35)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "FAN"
+					(at 4 0 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(symbol "Fan4_1_1"
+				(pin power_in line
+					(at -5.08 3.81 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -5.08 1.27 0)
+					(length 2.54)
+					(name "+24V"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at -5.08 -1.27 0)
+					(length 2.54)
+					(name "TACH"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 -3.81 0)
+					(length 2.54)
+					(name "PWM"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "FanCtrl:PC817"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 0 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PC817"
+				(at 0 7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_DIP:DIP-4_W7.62mm"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Description" "PC817 optocoupler; 1=A, 2=K, 3=E, 4=C"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PC817_0_1"
+				(polyline
+					(pts
+						(xy -3.81 2.54) (xy -2.286 2.54) (xy -2.286 1.016)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.81 -2.54) (xy -2.286 -2.54) (xy -2.286 -1.016)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -3.81 -5.08)
+					(end 3.81 5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.048 0.762) (xy -1.524 0.762) (xy -2.286 -0.508) (xy -3.048 0.762)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.048 -0.762) (xy -1.524 -0.762)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.762 1.524) (xy 0 0.762)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.762 0) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.381 1.651) (xy 0 0.762) (xy -0.889 1.143)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.381 0.127) (xy 0 -0.762) (xy -0.889 -0.381)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.762) (xy 2.54 2.54) (xy 3.81 2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -0.762) (xy 2.54 -2.54) (xy 3.81 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.524) (xy 0.762 1.524)
+					)
+					(stroke
+						(width 0.381)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "PC817_1_1"
+				(pin passive line
+					(at -6.35 2.54 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -6.35 -2.54 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin open_emitter line
+					(at 6.35 -2.54 180)
+					(length 2.54)
+					(name "E"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 6.35 2.54 180)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "FanCtrl:R"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -2.54 -1.016)
+					(end 2.54 1.016)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "FanCtrl:XIAO_ESP32C6"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board no)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 0 -91.44 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Seeed XIAO ESP32-C6"
+				(at 0 91.44 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1 1)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "XIAO_ESP32C6_0_1"
+				(rectangle
+					(start -12.7 -88.9)
+					(end 12.7 88.9)
+					(stroke
+						(width 0.381)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "XIAO ESP32-C6"
+					(at 0 -82.55 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(symbol "XIAO_ESP32C6_1_1"
+				(pin power_out line
+					(at 20.32 80 180)
+					(length 7.62)
+					(name "3V3"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "3V3"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -20.32 -80 0)
+					(length 7.62)
+					(name "5V"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "5V"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -20.32 52.54 0)
+					(length 7.62)
+					(name "D1/GPIO1_MP1_REQ"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "D1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -20.32 2.54 0)
+					(length 7.62)
+					(name "D2/GPIO2_MP2_REQ"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "D2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -20.32 -47.46 0)
+					(length 7.62)
+					(name "D3/GPIO21_MP3_REQ"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "D3"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 20.32 25 180)
+					(length 7.62)
+					(name "D4/GPIO22_PWM"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "D4"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 20.32 60 180)
+					(length 7.62)
+					(name "D5/GPIO23_TACH1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "D5"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 20.32 10 180)
+					(length 7.62)
+					(name "D7/GPIO17_TACH2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "D7"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 20.32 -40 180)
+					(length 7.62)
+					(name "D10/GPIO18_TACH3"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "D10"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 20.32 -80 180)
+					(length 7.62)
+					(name "GND"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "GND"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(junction
+		(at 228.6 166.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0905a60f-146c-4a7d-a83a-642c8361d927")
+	)
+	(junction
+		(at 157.48 116.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0d466b30-5910-4acc-b48a-5544fb79bfb6")
+	)
+	(junction
+		(at 228.6 116.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "32a25164-9cb5-42a6-bb2e-5d7be5cb7cb7")
+	)
+	(junction
+		(at 212.09 94.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "357ce6f2-fe8a-4e7f-9f17-dee7e5f9d4dc")
+	)
+	(junction
+		(at 256.54 110.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "68eaa7ca-f98d-4ef2-8208-116c2fe1678f")
+	)
+	(junction
+		(at 212.09 116.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "78b3b991-e685-4e36-9468-2e5e4f0ffed4")
+	)
+	(junction
+		(at 256.54 60.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7b977399-3c02-4ae6-b773-ea0703507be8")
+	)
+	(junction
+		(at 228.6 66.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "809d302f-1efc-45ed-b2f0-82ee6b7fe2dd")
+	)
+	(junction
+		(at 157.48 166.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9d085541-c25c-40b2-9760-b0e0b520e3e6")
+	)
+	(junction
+		(at 256.54 160.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eacca8c1-4609-4301-9bc9-074a3ada9987")
+	)
+	(junction
+		(at 157.48 66.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fb8d1310-aff9-44e1-b6c5-574c76c83d99")
+	)
+	(wire
+		(pts
+			(xy 151.13 66.37) (xy 157.48 66.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0147a83c-f622-4075-b478-71aab5f5e3f0")
+	)
+	(wire
+		(pts
+			(xy 121.92 171.45) (xy 138.43 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04fa3eef-e55e-4905-88b0-87fc44c82163")
+	)
+	(wire
+		(pts
+			(xy 288.29 63.83) (xy 288.29 62.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "071af553-0cfb-4d5a-bf6a-23c19bbb7f93")
+	)
+	(wire
+		(pts
+			(xy 205.74 94.69) (xy 212.09 94.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0bb5356d-0b42-42a1-badf-26eec65b5d90")
+	)
+	(wire
+		(pts
+			(xy 163.83 116.37) (xy 163.83 117.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0bde33d5-e4d3-45af-86ca-03e773bf209b")
+	)
+	(wire
+		(pts
+			(xy 163.83 117.15) (xy 165.1 117.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15d817c2-647c-4a85-8494-174db8d12189")
+	)
+	(wire
+		(pts
+			(xy 256.54 60.02) (xy 288.29 60.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "176fbd7d-d434-4071-b1d7-7607de4b7783")
+	)
+	(wire
+		(pts
+			(xy 246.42 59.69) (xy 246.42 60.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1853dc9b-ee17-4149-af81-394e4f864ad8")
+	)
+	(wire
+		(pts
+			(xy 151.13 116.37) (xy 157.48 116.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1871c57a-85ae-44b1-b3cc-48ccae23c11f")
+	)
+	(wire
+		(pts
+			(xy 121.92 121.45) (xy 138.43 121.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18743219-7191-4105-a7fe-1f8542190d11")
+	)
+	(wire
+		(pts
+			(xy 205.74 199.69) (xy 205.32 200)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d56fc49-d7dd-4250-980c-b121ee34360c")
+	)
+	(wire
+		(pts
+			(xy 157.48 166.37) (xy 151.13 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e631e96-9635-4906-9c52-a68a78ad3bcd")
+	)
+	(wire
+		(pts
+			(xy 212.09 66.37) (xy 212.09 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20b84abd-dcea-42d8-b9c2-6d5fa0d9f6cd")
+	)
+	(wire
+		(pts
+			(xy 248.92 68.91) (xy 245.11 68.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "240bf88b-a9dc-4727-8d8b-55af23afe3d7")
+	)
+	(wire
+		(pts
+			(xy 226.06 166.37) (xy 228.6 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24a9d713-84f5-483e-bbae-5e4fe042660b")
+	)
+	(wire
+		(pts
+			(xy 157.48 66.37) (xy 163.83 66.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24afb0e6-9463-4c3b-847a-1211c82ee231")
+	)
+	(wire
+		(pts
+			(xy 256.54 158.75) (xy 256.54 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "278eb4cf-2df6-42c2-a1cc-cc54274a94b1")
+	)
+	(wire
+		(pts
+			(xy 228.6 72.72) (xy 228.6 66.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2946e0c7-31db-4b98-b27a-287ef192ae6a")
+	)
+	(wire
+		(pts
+			(xy 228.6 122.72) (xy 228.6 116.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34ef169d-2668-4115-b726-8c4ecd7d5211")
+	)
+	(wire
+		(pts
+			(xy 246.42 109.69) (xy 205.74 109.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37ec5c94-b5c8-433d-83a4-86e1c14222bf")
+	)
+	(wire
+		(pts
+			(xy 228.6 166.37) (xy 234.95 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3897c1ca-1550-493e-8e96-72276716a60f")
+	)
+	(wire
+		(pts
+			(xy 246.42 109.69) (xy 246.42 110.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38cb0f8e-8aa9-4793-8a79-c3aefe426fc2")
+	)
+	(wire
+		(pts
+			(xy 135.89 66.37) (xy 138.43 66.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c991a11-b51e-407c-8635-cef1af87ae74")
+	)
+	(wire
+		(pts
+			(xy 288.29 154.94) (xy 280.67 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42c0a3ae-04f7-4557-8c93-40a13480c54f")
+	)
+	(wire
+		(pts
+			(xy 288.29 54.94) (xy 280.67 54.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "433d365e-859f-4ee5-86f0-e8eb5ac07f48")
+	)
+	(wire
+		(pts
+			(xy 121.92 66.37) (xy 125.73 66.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "435f7dd6-229f-475a-8aff-92661d64ec17")
+	)
+	(wire
+		(pts
+			(xy 245.11 63.83) (xy 288.29 63.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4989cb2a-2ef6-463c-9419-f4932632eba1")
+	)
+	(wire
+		(pts
+			(xy 135.89 116.37) (xy 138.43 116.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b26d9f8-f3bd-4f79-974f-c3413bd04a5b")
+	)
+	(wire
+		(pts
+			(xy 256.54 58.75) (xy 256.54 60.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b733a99-777a-40fc-bca6-9c33aebb49e9")
+	)
+	(wire
+		(pts
+			(xy 163.83 66.37) (xy 163.83 67.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b870fe4-1811-4c70-a7ca-7fa0c3fff1a0")
+	)
+	(wire
+		(pts
+			(xy 256.54 108.75) (xy 256.54 110.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c737e37-14e7-461d-acf5-a13bf75b4a4d")
+	)
+	(wire
+		(pts
+			(xy 135.89 166.37) (xy 138.43 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50097336-8a6d-4d94-8e14-ba40a27a1bdc")
+	)
+	(wire
+		(pts
+			(xy 165.1 199.69) (xy 164.68 200)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54abd84b-36b2-4a67-a967-9522c7348948")
+	)
+	(wire
+		(pts
+			(xy 228.6 137.96) (xy 228.6 132.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54b3154c-9fd8-481a-b383-f9aa9cae102f")
+	)
+	(wire
+		(pts
+			(xy 246.42 59.69) (xy 205.74 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55eadfa5-a97c-4c75-82a2-229676ab719f")
+	)
+	(wire
+		(pts
+			(xy 151.13 121.45) (xy 158.78 121.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5726f6e5-9fd6-4504-8234-629f709c16bb")
+	)
+	(wire
+		(pts
+			(xy 288.29 113.83) (xy 288.29 112.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b4f3cae-e373-4641-9a64-bb786d8770de")
+	)
+	(wire
+		(pts
+			(xy 280.67 157.48) (xy 288.29 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5deec0d0-37c4-4ff2-bbf0-382c3da4367d")
+	)
+	(wire
+		(pts
+			(xy 228.6 187.96) (xy 228.6 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f00af2c-25cb-4ceb-a261-b6207e27b98a")
+	)
+	(wire
+		(pts
+			(xy 280.67 107.48) (xy 288.29 107.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "600a6559-3562-4538-a543-1c56f79c7405")
+	)
+	(wire
+		(pts
+			(xy 151.13 71.45) (xy 158.78 71.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63026ace-4da1-426c-91a2-85e6ed52ff52")
+	)
+	(wire
+		(pts
+			(xy 151.13 171.45) (xy 158.78 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6368f417-f76c-4332-9e30-3d2b150954c6")
+	)
+	(wire
+		(pts
+			(xy 226.06 66.37) (xy 228.6 66.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6451e722-d3c6-4123-bdba-5c62238fd98a")
+	)
+	(wire
+		(pts
+			(xy 280.67 57.48) (xy 288.29 57.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "695d75d0-5c8f-40fc-8aec-4fe987ed9dc2")
+	)
+	(wire
+		(pts
+			(xy 246.42 159.69) (xy 205.74 159.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "714e40b1-0ec9-47d5-8ae1-f865e6673db0")
+	)
+	(wire
+		(pts
+			(xy 248.92 168.91) (xy 248.92 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a750059-b99a-40c5-a307-d7dd7efc1a09")
+	)
+	(wire
+		(pts
+			(xy 228.6 87.96) (xy 228.6 82.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d8351fd-86ef-43b3-8395-2340cf75a8ba")
+	)
+	(wire
+		(pts
+			(xy 248.92 118.91) (xy 248.92 126.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ef186ef-d34d-4e4d-9929-068315eb933d")
+	)
+	(wire
+		(pts
+			(xy 246.42 160.02) (xy 256.54 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "808a04e4-57fd-4c39-a02a-a16e26d45dd1")
+	)
+	(wire
+		(pts
+			(xy 157.48 160.02) (xy 157.48 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "81d947ba-cbfa-4112-a594-e4902005c1be")
+	)
+	(wire
+		(pts
+			(xy 212.09 116.37) (xy 215.9 116.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85fa982c-0392-498a-8220-6b33ca3d8545")
+	)
+	(wire
+		(pts
+			(xy 248.92 68.91) (xy 248.92 76.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9144bb32-1189-4802-8b38-d33af4293729")
+	)
+	(wire
+		(pts
+			(xy 256.54 110.02) (xy 288.29 110.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91cd6962-2435-4e25-994c-12792af68ed1")
+	)
+	(wire
+		(pts
+			(xy 157.48 60.02) (xy 157.48 66.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "95e057a7-b34e-4079-827e-2b260a00f158")
+	)
+	(wire
+		(pts
+			(xy 205.74 39.69) (xy 207.86 39.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9caa21d4-2f01-493a-9cfc-cd7abb46976a")
+	)
+	(wire
+		(pts
+			(xy 121.92 116.37) (xy 125.73 116.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9cacd54c-5b3f-47e4-8598-976ae94d77d1")
+	)
+	(wire
+		(pts
+			(xy 163.83 67.15) (xy 165.1 67.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9eff76ab-e7a3-453e-aa63-f7e2c152c8f8")
+	)
+	(wire
+		(pts
+			(xy 248.92 118.91) (xy 245.11 118.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1cc4437-c458-45fc-9f8d-f4029eb4f57b")
+	)
+	(wire
+		(pts
+			(xy 228.6 116.37) (xy 234.95 116.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1cf59b6-725d-41d0-962f-0dcfd277cbce")
+	)
+	(wire
+		(pts
+			(xy 288.29 104.94) (xy 280.67 104.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b58fec64-d5c1-4a75-8c2e-c77a4bcf37a8")
+	)
+	(wire
+		(pts
+			(xy 212.09 166.37) (xy 215.9 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6ea1a0c-4af5-435c-9c09-6227a6e4584e")
+	)
+	(wire
+		(pts
+			(xy 121.92 166.37) (xy 125.73 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba8ba964-096d-4f0c-8074-36590774dbf9")
+	)
+	(wire
+		(pts
+			(xy 163.83 167.15) (xy 163.83 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "baacf8d1-3a06-4e08-b720-9b584808341b")
+	)
+	(wire
+		(pts
+			(xy 157.48 116.37) (xy 163.83 116.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c47338b1-fb04-4a95-b005-ea59051752bf")
+	)
+	(wire
+		(pts
+			(xy 226.06 116.37) (xy 228.6 116.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c61f9d31-d7d6-4c10-9f82-77880f493d82")
+	)
+	(wire
+		(pts
+			(xy 163.83 166.37) (xy 157.48 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb8778d9-01f2-4ab9-85c2-ae91e79ec798")
+	)
+	(wire
+		(pts
+			(xy 163.83 167.15) (xy 165.1 167.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6734191-912f-4899-9f27-abbb6875e8a3")
+	)
+	(wire
+		(pts
+			(xy 288.29 163.83) (xy 245.11 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7944858-3fa4-46fc-ab79-8bcab54b3e19")
+	)
+	(wire
+		(pts
+			(xy 212.09 66.37) (xy 215.9 66.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8dd8145-48aa-456c-aa57-5cd61482f59e")
+	)
+	(wire
+		(pts
+			(xy 245.11 113.83) (xy 288.29 113.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dbda70dd-ab59-4734-bb24-1061bb8162ee")
+	)
+	(wire
+		(pts
+			(xy 121.92 71.45) (xy 138.43 71.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dcaa2c20-1b21-4a2b-8461-c6bd3c4287b6")
+	)
+	(wire
+		(pts
+			(xy 246.42 160.02) (xy 246.42 159.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dcb39cc7-9662-4190-8f69-60f311ba3807")
+	)
+	(wire
+		(pts
+			(xy 228.6 66.37) (xy 234.95 66.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dde8c0ae-8e17-4ff2-9cbe-66da2a77a42e")
+	)
+	(wire
+		(pts
+			(xy 157.48 110.02) (xy 157.48 116.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dee7ba29-4cd1-4910-a0f2-676969a57231")
+	)
+	(wire
+		(pts
+			(xy 256.54 160.02) (xy 288.29 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e30c989a-09d5-4a2a-9477-70e621e4f324")
+	)
+	(wire
+		(pts
+			(xy 288.29 163.83) (xy 288.29 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebbf3a7a-e923-45ef-9181-3f69a02370fe")
+	)
+	(wire
+		(pts
+			(xy 248.92 168.91) (xy 245.11 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebc97d9e-d38b-4991-8897-edbecccfc0a0")
+	)
+	(wire
+		(pts
+			(xy 246.42 110.02) (xy 256.54 110.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef9ab5ac-9b40-4c44-a5da-5496e9462b77")
+	)
+	(wire
+		(pts
+			(xy 246.42 60.02) (xy 256.54 60.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f921af9b-049d-4b57-adbb-9bdf73df1ca6")
+	)
+	(wire
+		(pts
+			(xy 228.6 172.72) (xy 228.6 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fae54b2c-eb11-4e63-9ff3-41f7817ed461")
+	)
+	(global_label "3V3"
+		(shape input)
+		(at 256.54 98.59 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "04e15ece-4fde-49f2-97a8-feb1bf2b8e1a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 256.54 101.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+24V"
+		(shape input)
+		(at 280.67 107.48 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "056e6bfa-10c1-40b1-ac1c-4595c62a4a71")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 272.6048 107.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 248.92 126.53 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0d4fee5b-2fb0-473d-839a-377102256988")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 248.92 133.3857 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 280.67 104.94 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "10769996-aceb-41f5-90c6-81fb18b8850e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 273.8143 104.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 158.78 71.45 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2772f5d1-2c1f-4413-a44e-cced03f872f5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 158.78 73.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 280.67 154.94 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2980c225-62dc-4bfd-82af-251083c4016b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 280.67 157.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+24V"
+		(shape input)
+		(at 280.67 157.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "319653df-5375-4c74-b3a8-a7c7f6fda00d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 280.67 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 228.6 87.96 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3c10131a-1ddb-4150-b021-8391cbe0d17b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 228.6 94.8157 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 228.6 187.96 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3d3a4e64-afc5-41d3-bd1c-6d1e8eed9863")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 228.6 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 205.32 200 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3d8cfe96-1871-4658-9051-03fda61fd223")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 205.32 202.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 248.92 76.53 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "416a7a3e-a13d-47fa-abe4-f03f11a82938")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 248.92 83.3857 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 280.67 54.94 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "63594471-76b3-4c82-89d3-b61ad496f8ed")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 273.8143 54.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 248.92 176.53 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "691b3dfe-5c7a-4db2-b283-987ca8bc66a4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 246.38 176.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "3V3"
+		(shape input)
+		(at 207.86 39.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "72b06ee9-d178-4df5-8215-db30c1ee5075")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 207.86 42.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 158.78 121.45 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9ea689b0-045c-424b-b52f-fb88afb451b4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 158.78 123.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "3V3"
+		(shape input)
+		(at 256.54 148.59 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c1ae6f08-ddd1-4bf1-ae4d-88f1f126d20c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 256.54 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "3V3"
+		(shape input)
+		(at 157.48 99.86 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c6aee46d-8652-47a9-8015-6da16ba9c429")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 157.48 102.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+5V"
+		(shape input)
+		(at 164.68 200 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c75da1ad-78cb-43c0-b276-3f85d2027ac1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 164.68 202.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "3V3"
+		(shape input)
+		(at 157.48 49.86 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d2cc28ee-fd8a-4f64-a4bf-e2a7b63e6915")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 157.48 52.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "3V3"
+		(shape input)
+		(at 256.54 48.59 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d7881686-56e1-4a84-9f40-f6589ad2b43b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 256.54 51.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 158.78 171.45 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e28d874f-4025-4a05-8f5b-dfd521d0e104")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 158.78 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "+24V"
+		(shape input)
+		(at 280.67 57.48 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e3164e64-8b8e-4e52-a384-7c8c2a45e1c1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 272.6048 57.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "3V3"
+		(shape input)
+		(at 157.48 149.86 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f3290bef-20d3-4a52-a137-ffff0490cf65")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 157.48 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 228.6 137.96 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fc345ee5-2466-49a9-be4a-24b766b00194")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 228.6 144.8157 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:PC817")
+		(at 144.78 68.91 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0bbd20c0-3210-4b92-aadf-82ac8fa50bef")
+		(property "Reference" "U1"
+			(at 144.78 61.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PC817"
+			(at 144.78 75.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-4_W7.62mm"
+			(at 144.78 68.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 144.78 68.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 144.78 68.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ef0f581c-b2a4-405a-b18e-2f01e991a1f3")
+		)
+		(pin "2"
+			(uuid "0009ff49-d627-49eb-bca0-beab1bcf6146")
+		)
+		(pin "3"
+			(uuid "3e8c789f-65ed-4805-9071-8a39431f15da")
+		)
+		(pin "4"
+			(uuid "65092673-24cf-420a-8342-ca32202603e7")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:Fan4")
+		(at 293.37 108.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0e525bc4-616c-4cc0-a83d-8574890b59d4")
+		(property "Reference" "J5"
+			(at 293.37 101.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Noctua Fan 2"
+			(at 293.37 115.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 293.37 108.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 293.37 108.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 293.37 108.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ff756b6d-f1c8-4594-9582-9621b9694b11")
+		)
+		(pin "2"
+			(uuid "2f61e9f9-0f4b-4a5b-9653-3216cb290b08")
+		)
+		(pin "3"
+			(uuid "ddfd3a46-2e9b-41c0-b3b7-2f9cab3320ab")
+		)
+		(pin "4"
+			(uuid "6a386129-decc-43b2-9349-53b4906be23b")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:R")
+		(at 220.98 66.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "14194367-e92a-4472-b784-4e5bca623633")
+		(property "Reference" "R7"
+			(at 221.076 64.01 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 220.822 68.836 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 220.98 66.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 220.98 66.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 220.98 66.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2ca0d543-ae7a-489f-aaec-5f0c08f86b51")
+		)
+		(pin "2"
+			(uuid "efd68896-11ab-4322-8b1d-757158f963b3")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:R")
+		(at 157.48 54.94 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "15f4021f-c8c8-4683-ac6b-ea5162a86398")
+		(property "Reference" "R4"
+			(at 159.658 54.992 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 155.086 54.992 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 157.48 54.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 54.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 157.48 54.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b5ae98eb-2f31-43ba-a315-9d915005474c")
+		)
+		(pin "2"
+			(uuid "02cbe912-8224-4d7d-a1a3-af17678bce62")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:R")
+		(at 157.48 154.94 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2e76a243-4bf7-4ce7-9d1f-cd9694e5e320")
+		(property "Reference" "R6"
+			(at 159.658 154.992 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 155.086 154.992 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 157.48 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 157.48 154.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5254d4d4-ffbd-4c93-bb7a-2e2744bc9a6d")
+		)
+		(pin "2"
+			(uuid "b0b51777-fe5d-44c8-90ba-d30a612f8d38")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:Conn2")
+		(at 116.84 168.91 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "354dfe8b-fe52-40f2-b7ba-6ed28b62e220")
+		(property "Reference" "J3"
+			(at 116.84 161.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MultiPlus 3 FAN"
+			(at 116.84 175.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 116.84 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 116.84 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 116.84 168.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "762aefaa-4e45-4f18-b4c8-f1a1d4770d38")
+		)
+		(pin "2"
+			(uuid "5fab44c2-0827-40fe-a179-97ee94066032")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:R")
+		(at 220.98 116.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "35e21fba-97d5-4e89-b4ff-ad6c59cf74b8")
+		(property "Reference" "R9"
+			(at 221.076 114.01 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 220.822 118.836 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 220.98 116.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 220.98 116.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 220.98 116.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b3b4ffb1-39b5-43bf-86f9-92fc41222685")
+		)
+		(pin "2"
+			(uuid "92241508-e1d9-4d76-8b63-c0857965dade")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:R")
+		(at 256.54 103.67 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3f91bb08-953d-41af-99ba-ac14bc104d7b")
+		(property "Reference" "R14"
+			(at 254.374 103.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 258.946 103.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 256.54 103.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 256.54 103.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 256.54 103.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a7d41f23-5c35-45b1-8c26-925978ed977e")
+		)
+		(pin "2"
+			(uuid "acce281a-0465-4a7d-a624-619148af1ddd")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:R")
+		(at 130.81 116.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "46029b6a-0a20-45fe-9dd5-648242577727")
+		(property "Reference" "R2"
+			(at 130.838 113.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k 0.5W"
+			(at 130.838 118.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 130.81 116.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 116.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 130.81 116.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "220dd776-727e-4655-82b9-8918f76c2331")
+		)
+		(pin "2"
+			(uuid "91e3b69e-dab7-405f-8ad9-0b8cf0cd9f30")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:R")
+		(at 228.6 127.8 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "466c466a-0635-47d8-8ae3-8f8af3d0511a")
+		(property "Reference" "R10"
+			(at 231.902 127.8 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 225.298 127.8 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 228.6 127.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 127.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 228.6 127.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9e971de1-fd47-4fe0-b7bb-de12f64af259")
+		)
+		(pin "2"
+			(uuid "9ee07928-731a-4e5d-97e6-16a9a5de20e9")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:R")
+		(at 220.98 166.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "54e3d4df-f0ed-4b43-9867-b2046f79999f")
+		(property "Reference" "R11"
+			(at 221.076 164.01 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 220.822 168.836 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 220.98 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 220.98 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 220.98 166.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c992f912-8969-4485-a998-329e194d18b3")
+		)
+		(pin "2"
+			(uuid "61f18094-c949-400a-844b-97fb5e93a964")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:Fan4")
+		(at 293.37 158.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5a922de0-a946-420d-b1fb-7d4d0774b64a")
+		(property "Reference" "J6"
+			(at 293.37 151.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Noctua Fan 3"
+			(at 293.37 165.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 293.37 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 293.37 158.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 293.37 158.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3ed2543f-23c5-44dd-a63f-8ff4d3447845")
+		)
+		(pin "2"
+			(uuid "1071fd05-dcee-49f2-b95e-a1933b9667cd")
+		)
+		(pin "3"
+			(uuid "8b23f870-4cfc-4842-84ab-4385c3efa08c")
+		)
+		(pin "4"
+			(uuid "8c38b92b-1728-41a3-b126-32e89e13fd8c")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:BC547")
+		(at 240.03 166.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5c99f131-59c4-4603-96ef-43851163ec27")
+		(property "Reference" "Q3"
+			(at 239.776 170.942 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BC547B"
+			(at 240.03 173.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(at 240.03 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 240.03 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 240.03 166.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9440944f-f815-47a7-a30a-21656e98dfdd")
+		)
+		(pin "2"
+			(uuid "fdd52c91-5997-4822-9585-59e6272f91f5")
+		)
+		(pin "3"
+			(uuid "efdaca6e-6d2c-48ff-8765-68e9a0e13314")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "Q3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:R")
+		(at 256.54 53.67 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5d97b792-a3b9-430d-b296-200b653672b0")
+		(property "Reference" "R13"
+			(at 254.374 53.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 258.946 53.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 256.54 53.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 256.54 53.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 256.54 53.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3cbf0bfe-637f-4ad1-bd34-4b6579a77d7f")
+		)
+		(pin "2"
+			(uuid "17cdd797-066e-4701-9f44-43f7f539c2c5")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:PC817")
+		(at 144.78 168.91 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6e627daf-4bb7-4738-b13c-eefb2b0cac1e")
+		(property "Reference" "U3"
+			(at 144.78 161.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PC817"
+			(at 144.78 175.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-4_W7.62mm"
+			(at 144.78 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 144.78 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 144.78 168.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7ec6121a-6df4-403b-b0db-2c371bb96b76")
+		)
+		(pin "2"
+			(uuid "b5e5b326-ed36-4c04-994a-1a54b469d5f3")
+		)
+		(pin "3"
+			(uuid "46ee3371-e8ba-490d-bea2-e94da85cfb8f")
+		)
+		(pin "4"
+			(uuid "209c4698-4c59-46c3-bfe1-1d91b2418f31")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:R")
+		(at 130.81 66.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "707a713b-9adc-4232-a0f0-7f5d45e134d0")
+		(property "Reference" "R1"
+			(at 130.838 63.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k 0.5W"
+			(at 130.838 68.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 130.81 66.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 66.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 130.81 66.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b832630b-7cee-43e7-8445-79a9b0a8e1ad")
+		)
+		(pin "2"
+			(uuid "2813aa9c-9c3d-4759-a79f-5c2081b6ea5f")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:R")
+		(at 157.48 104.94 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "84e0f7de-fb01-4459-97e6-7a4f94fb069d")
+		(property "Reference" "R5"
+			(at 159.658 104.992 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 155.086 104.992 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 157.48 104.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 104.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 157.48 104.94 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d6c460c5-1ba1-4675-8f49-159b1474e989")
+		)
+		(pin "2"
+			(uuid "d19d7223-6d1a-4bc0-8168-321fbfe60510")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:Conn2")
+		(at 116.84 68.91 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "96765956-7cff-43c3-9ade-87c13e9499a8")
+		(property "Reference" "J1"
+			(at 116.84 61.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MultiPlus 1 FAN"
+			(at 116.84 75.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 116.84 68.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 116.84 68.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 116.84 68.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "92255c88-c0d9-40a8-85e4-bb2d86c6cdbd")
+		)
+		(pin "2"
+			(uuid "f7e8ad42-3232-4439-aaff-470cefb0a22d")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:PC817")
+		(at 144.78 118.91 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "addd7373-5d94-47d0-894d-623e4c519e2f")
+		(property "Reference" "U2"
+			(at 144.78 111.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PC817"
+			(at 144.78 125.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-4_W7.62mm"
+			(at 144.78 118.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 144.78 118.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 144.78 118.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "04d17325-7db2-4a74-9be7-ab9e91276903")
+		)
+		(pin "2"
+			(uuid "417b1884-bcc3-4891-b1fb-2cad8feeb168")
+		)
+		(pin "3"
+			(uuid "8ee93b20-748c-484b-8db0-1b492e3a2b07")
+		)
+		(pin "4"
+			(uuid "68bbb3c5-4891-4fed-8ed3-a4dbe028a2a5")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:R")
+		(at 256.54 153.67 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b59ba18c-3f95-400b-a296-dec8561e767d")
+		(property "Reference" "R15"
+			(at 254.374 153.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 258.946 153.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 256.54 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 256.54 153.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 256.54 153.67 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "22ea2dd8-1d02-4053-97f0-a08e5ac66e60")
+		)
+		(pin "2"
+			(uuid "af786efb-4c9a-4216-974d-c8387f1aef7f")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "R15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:BC547")
+		(at 240.03 66.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b8b9b6c8-316b-437c-853f-be49469050f7")
+		(property "Reference" "Q1"
+			(at 239.776 70.942 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BC547B"
+			(at 240.03 73.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(at 240.03 66.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 240.03 66.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 240.03 66.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "004c17ef-9ba4-48e7-9f51-5da4fed03876")
+		)
+		(pin "2"
+			(uuid "32ec0601-b24e-4b20-ba91-982e873eec7d")
+		)
+		(pin "3"
+			(uuid "5f8f39a9-672d-4449-abcb-f346a6b68af1")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:R")
+		(at 228.6 77.8 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c63a745b-07ad-4096-a37c-178d55ec6bed")
+		(property "Reference" "R8"
+			(at 231.902 77.8 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 225.298 77.8 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 228.6 77.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 77.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 228.6 77.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "56be649c-1c54-4865-b310-9777c2049a21")
+		)
+		(pin "2"
+			(uuid "64d12016-563f-4657-812d-0123a10cd9f2")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:Fan4")
+		(at 293.37 58.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "cb6cbf80-16e1-470c-8001-b3fd395c082e")
+		(property "Reference" "J4"
+			(at 293.37 51.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Noctua Fan 1"
+			(at 293.37 65.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 293.37 58.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 293.37 58.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 293.37 58.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c8334c5f-e793-4076-882c-bd41e9d290dc")
+		)
+		(pin "2"
+			(uuid "467647bd-a7d9-44d5-9206-44151088eca0")
+		)
+		(pin "3"
+			(uuid "36299bc3-235a-44ca-ae94-45b49e274306")
+		)
+		(pin "4"
+			(uuid "b122b36b-a2d2-4b30-bb7f-9a88a3df899b")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:BC547")
+		(at 240.03 116.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ccdc0d1b-9019-4d5b-8272-1fee02517cfe")
+		(property "Reference" "Q2"
+			(at 239.776 120.942 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BC547B"
+			(at 240.03 123.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(at 240.03 116.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 240.03 116.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 240.03 116.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "be268324-f46e-4274-9a8f-4a1eb0d0128d")
+		)
+		(pin "2"
+			(uuid "158dc937-cfaa-4f5e-97ef-de06a49eaa45")
+		)
+		(pin "3"
+			(uuid "987960a6-e0fc-47d4-863f-4030bf3b5e47")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:R")
+		(at 228.6 177.8 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d2a1b4c6-5f0f-4fe9-8ca7-d27dd6be184f")
+		(property "Reference" "R12"
+			(at 231.902 177.8 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 225.298 177.8 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 228.6 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 228.6 177.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "af0b8657-115d-4b7e-959c-e2bab20ba419")
+		)
+		(pin "2"
+			(uuid "381912ec-5bdf-4fed-976e-2f36cf4ad199")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:XIAO_ESP32C6")
+		(at 185.42 119.69 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d9681eb5-4533-41dd-bd23-8e6ba7f1caaa")
+		(property "Reference" "U4"
+			(at 185.42 112.69 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Seeed XIAO ESP32-C6"
+			(at 185.42 126.69 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 185.42 119.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 185.42 119.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 185.42 119.69 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "D1"
+			(uuid "e4187420-fe4f-4829-9b42-aaa6044335c6")
+		)
+		(pin "D2"
+			(uuid "48e57f45-0cf5-40f6-91a8-bbbe0ca5760f")
+		)
+		(pin "D3"
+			(uuid "1f679cec-122d-4720-af8a-b73c7fa04b33")
+		)
+		(pin "5V"
+			(uuid "0a49ae43-61c0-4f89-990c-f4b4ca33d08f")
+		)
+		(pin "D4"
+			(uuid "b8804dc6-04a1-42c4-a921-db4208d16177")
+		)
+		(pin "D5"
+			(uuid "6c0c6eab-8a06-46fc-bf5f-c06b283ce029")
+		)
+		(pin "D7"
+			(uuid "6422fc96-0a34-4c00-95cf-86a3aeb289b1")
+		)
+		(pin "D10"
+			(uuid "47aca321-1e81-45d0-88d9-00d0d623be76")
+		)
+		(pin "3V3"
+			(uuid "95f38e6b-904d-405e-ad3c-eb5ebb21da54")
+		)
+		(pin "GND"
+			(uuid "90dddb51-f25a-4d81-8bd1-c8641102553e")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "U4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:Conn2")
+		(at 116.84 118.91 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f53cba79-dcd0-4d72-b7d0-3024d1f63232")
+		(property "Reference" "J2"
+			(at 116.84 111.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MultiPlus 2 FAN"
+			(at 116.84 125.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 116.84 118.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 116.84 118.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 116.84 118.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8094c9f4-23c9-492f-91cf-5957f860f721")
+		)
+		(pin "2"
+			(uuid "340b1aa0-ca13-466e-87c5-6e74403a3f57")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "FanCtrl:R")
+		(at 130.81 166.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ffb8c0ec-3ab7-43b2-bafb-3a862ca206ba")
+		(property "Reference" "R3"
+			(at 130.838 163.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7k 0.5W"
+			(at 130.838 168.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 130.81 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 166.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 130.81 166.37 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "291beb4e-0bf0-480f-bbbf-4b3cf37286fa")
+		)
+		(pin "2"
+			(uuid "dcb8b89e-4bdf-46f6-b017-a06a3ae7986b")
+		)
+		(instances
+			(project "VictronMP-II-FanController"
+				(path "/9d30839a-5f0c-4f94-946d-63601965fb36"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
