@@ -68,7 +68,6 @@ sensor:
       number: GPIO1
       mode:
         input: true
-        pullup: true
       inverted: true
     update_interval: 500ms
     unit_of_measurement: "%"
@@ -78,6 +77,8 @@ sensor:
       - clamp:
           min_value: 0
           max_value: 100
+      # Quantize the rather coarse Victron fan PWM to 5% steps.
+      - lambda: return roundf(x / 5.0f) * 5.0f;
 
   - platform: duty_cycle
     id: mp2_request
@@ -86,7 +87,6 @@ sensor:
       number: GPIO2
       mode:
         input: true
-        pullup: true
       inverted: true
     update_interval: 500ms
     unit_of_measurement: "%"
@@ -96,6 +96,8 @@ sensor:
       - clamp:
           min_value: 0
           max_value: 100
+      # Quantize the rather coarse Victron fan PWM to 5% steps.
+      - lambda: return roundf(x / 5.0f) * 5.0f;
 
   - platform: duty_cycle
     id: mp3_request
@@ -104,7 +106,6 @@ sensor:
       number: GPIO21
       mode:
         input: true
-        pullup: true
       inverted: true
     update_interval: 500ms
     unit_of_measurement: "%"
@@ -114,6 +115,8 @@ sensor:
       - clamp:
           min_value: 0
           max_value: 100
+      # Quantize the rather coarse Victron fan PWM to 5% steps.
+      - lambda: return roundf(x / 5.0f) * 5.0f;
 
   - platform: template
     id: highest_request
@@ -191,9 +194,11 @@ sensor:
     entity_category: diagnostic
 
 number:
+  # Auto-mode baseline. A 0% Victron request produces this fan speed;
+  # a 100% Victron request still produces 100% fan speed.
   - platform: template
-    id: minimum_fan_speed
-    name: "Minimum Fan Speed"
+    id: baseline_fan_speed
+    name: "Baseline Fan Speed"
     min_value: 20
     max_value: 60
     step: 1
@@ -249,17 +254,28 @@ interval:
           } else if (id(fan_mode).current_option() == "Full Speed") {
             command = 100.0f;
           } else {
-            // Auto mode. Until all three request inputs are valid, fail to 100%.
+            // Auto mode. Until all three request inputs and the baseline are
+            // valid, fail to 100%.
             if (!isnan(id(mp1_request).state) &&
                 !isnan(id(mp2_request).state) &&
                 !isnan(id(mp3_request).state) &&
-                !isnan(id(minimum_fan_speed).state)) {
+                !isnan(id(baseline_fan_speed).state)) {
 
-              command = std::max(id(mp1_request).state,
-                        std::max(id(mp2_request).state,
-                                 id(mp3_request).state));
+              const float request = std::max(
+                  id(mp1_request).state,
+                  std::max(id(mp2_request).state,
+                           id(mp3_request).state));
 
-              command = std::max(command, id(minimum_fan_speed).state);
+              const float baseline = std::max(
+                  20.0f, std::min(100.0f, id(baseline_fan_speed).state));
+
+              // Rescale 0...100% Victron request onto baseline...100%.
+              // Example: 50% baseline + 50% request = 75% command.
+              command = baseline +
+                        (request / 100.0f) * (100.0f - baseline);
+
+              // Keep the actual commanded value to whole-percent steps.
+              command = roundf(command);
             }
           }
 
