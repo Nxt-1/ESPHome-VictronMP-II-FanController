@@ -247,11 +247,22 @@ interval:
       - lambda: |-
           float command = 100.0f;
 
+          // Auto mode uses fast attack / slow release:
+          // - any increase in Victron request is followed immediately;
+          // - decreases are limited to one 5% request step every 10 seconds.
+          // This also suppresses short downward glitches in the rather coarse
+          // Victron fan PWM signal.
+          static float held_request = 0.0f;
+          static uint32_t last_release_ms = 0;
+          static bool auto_was_active = false;
+
           if (id(fan_mode).current_option() == "Manual") {
+            auto_was_active = false;
             if (!isnan(id(fan_speed).state)) {
               command = id(fan_speed).state;
             }
           } else if (id(fan_mode).current_option() == "Full Speed") {
+            auto_was_active = false;
             command = 100.0f;
           } else {
             // Auto mode. Until all three request inputs and the baseline are
@@ -266,16 +277,43 @@ interval:
                   std::max(id(mp2_request).state,
                            id(mp3_request).state));
 
+              const uint32_t now = millis();
+
+              // Entering Auto starts from the current request rather than a
+              // stale value left over from an earlier Auto session.
+              if (!auto_was_active) {
+                held_request = request;
+                last_release_ms = now;
+                auto_was_active = true;
+              } else if (request > held_request) {
+                // Fast attack: increases are immediate.
+                held_request = request;
+                last_release_ms = now;
+              } else if (request < held_request) {
+                // Slow release: drop at most one 5% step every 10 seconds.
+                if ((uint32_t) (now - last_release_ms) >= 10000U) {
+                  held_request = std::max(request, held_request - 5.0f);
+                  last_release_ms = now;
+                }
+              } else {
+                // A stable request restarts the release timer so a future
+                // decrease must persist before airflow is reduced.
+                last_release_ms = now;
+              }
+
               const float baseline = std::max(
                   20.0f, std::min(100.0f, id(baseline_fan_speed).state));
 
-              // Rescale 0...100% Victron request onto baseline...100%.
+              // Rescale the held 0...100% Victron request onto
+              // baseline...100%.
               // Example: 50% baseline + 50% request = 75% command.
               command = baseline +
-                        (request / 100.0f) * (100.0f - baseline);
+                        (held_request / 100.0f) * (100.0f - baseline);
 
               // Keep the actual commanded value to whole-percent steps.
               command = roundf(command);
+            } else {
+              auto_was_active = false;
             }
           }
 

@@ -34,14 +34,21 @@ Manual. Select Auto to return control to the MultiPlus requests.
 ## Auto control logic
 
 The three Victron request inputs are rounded to the nearest **5%** and the
-highest request is used. In Auto mode that request is rescaled from
-**0–100%** onto **Baseline Fan Speed–100%**:
+highest request is used.
+
+Auto mode uses **fast attack / slow release**. Any increase in the Victron
+request is followed immediately. A decrease must persist and is released at
+only **5 percentage points every 10 seconds**. Brief downward request glitches
+therefore do not immediately reduce cooling.
+
+The resulting held request is rescaled from **0–100%** onto
+**Baseline Fan Speed–100%**:
 
 `command = baseline + (request / 100) × (100 - baseline)`
 
 The final fan command is rounded to the nearest whole percent. For example, a
-50% baseline and a 50% Victron request produce a 75% fan command. A 0% request
-runs at the baseline; a 100% request always commands 100%.
+50% baseline and a 50% effective Victron request produce a 75% fan command. A
+0% request runs at the baseline; a 100% request always commands 100%.
 
 **Feedback**
 - `MP1 Fan RPM`
